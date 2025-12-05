@@ -109,6 +109,7 @@ Key steps included:
 - Business Requirements Document (BRD)  
 - As-Is & To-Be BPMN Diagram (visualizing the automated flow)  
 - Project Charter
+- Timestamped Invoice Log
 - Interview Notes
 
 ---
@@ -117,7 +118,7 @@ Key steps included:
 
 | Tool       | Purpose |
 |------------|---------|
-| **Excel**    | Data extraction, transformation, and duration calculation, and Pareto visualization |
+| **Excel**  | Data extraction, transformation, and duration calculation, and Pareto visualization |
 | **Miro**   | Process mapping (As-Is / To-Be BPMN) and Root Cause Analysis |
 | **Notion** | Project documentation and BRD creation |
 
