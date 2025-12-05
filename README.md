@@ -1,12 +1,12 @@
 # Accounts Payable (AP) Cycle Time Reduction Project
 
-## Process Analysis • Business Intelligence • SQL • BPMN
+## Process Analysis • Business Intelligence • Excel • BPMN • Miro
 
 ---
 
 ## Project Overview
 
-This project provides a comprehensive analysis of the organization's Invoice-to-Pay process using 15,000+ transactional records. The goal was to identify and quantify the core bottlenecks causing a high average invoice cycle time — which was impacting vendor relationships and financial accruals.
+This project provides a comprehensive analysis of the organization's Invoice-to-Pay process using 3,000 transactional records. The goal was to identify and quantify the core bottlenecks causing a high average invoice cycle time — which was impacting vendor relationships and financial accruals.
 
 The analysis includes:
 
@@ -19,7 +19,7 @@ The analysis includes:
 
 While a live dashboard is not shared, the project used visualization to track:
 - Invoice Cycle Time Overview  
-- Baseline vs. Projected Cycle Time (12 days → < 5 days)  
+- Baseline vs. Projected Cycle Time (13 days → < 5 days)  
 - Pareto chart showing delay contribution by actor (78% from Approvers)  
 - Rework & Exception Metrics  
 - Manual touch rate reduction (Projected 65% → < 20%)  
@@ -31,17 +31,15 @@ Final dashboard images and project documentation are available in the project do
 
 ## Data Sources
 
-**Dataset**: Full Invoice Transaction Logs (15,000+ records)  
-**File**: `full_ap_transaction_logs.csv`  
+**Dataset**: Full Invoice Transaction Logs (3,000 records)  
+**File**: `invoice_dataset_cleaned.csv`  
 **Description**: Timestamps for all invoice status changes — sourced from the organization’s internal ERP and financial databases.
-
-> *Note: I cannot upload the Excel file because it exceeds GitHub’s 25MB file size limit.*
 
 ---
 
-## Data Cleaning & Transformation (SQL)
+## Data Cleaning & Transformation
 
-Processing was performed using SQL to standardize all datasets into a clean analytical model focused on time duration.
+Processing was performed using Excel to standardize all datasets into a clean analytical model focused on time duration.
 
 Key steps included:
 
@@ -63,10 +61,9 @@ Key steps included:
 - Average Invoice Cycle Time (Total Days)  
 - Process Step Cycle Time (Days per Actor)  
 - Delay Percentage Contribution (Pareto Analysis)  
-- Manual Touch Rate (Projected Reduction)  
 
 ### Data Processing
-- Calculated duration metrics using SQL.  
+- Calculated duration metrics using Ms. Excel.  
 - Segmented delay by Responsible Actor (Approver 1, Approver 2, AP Team).  
 - Correlated long cycle times with specific root causes (e.g., Manual Data Entry, Lack of Escalation).  
 
@@ -90,7 +87,7 @@ Key steps included:
 ## Key Insights & Findings
 
 - **Approval Process Bottleneck**  
-  Finding: Approvers (Stage 1 and 2) account for **78% of the 12-day average cycle time**.  
+  Finding: Approvers (Stage 1 and 2) account for **78% of the 13-day average cycle time**.  
   Implication: Improvement efforts must target the wait time for human action — not system processing time.
 
 - **Manual Workflow Inefficiency**  
@@ -110,9 +107,9 @@ Key steps included:
 ## Deliverables
 
 - Business Requirements Document (BRD)  
-- To-Be BPMN Diagram (visualizing the automated flow)  
-- SQL transformation scripts  
-- Final Project Report (Lessons Learned, Before/After Metrics)  
+- As-Is & To-Be BPMN Diagram (visualizing the automated flow)  
+- Project Charter
+- Interview Notes
 
 ---
 
@@ -120,9 +117,8 @@ Key steps included:
 
 | Tool       | Purpose |
 |------------|---------|
-| **SQL**    | Data extraction, transformation, and duration calculation |
+| **Excel**    | Data extraction, transformation, and duration calculation, and Pareto visualization |
 | **Miro**   | Process mapping (As-Is / To-Be BPMN) and Root Cause Analysis |
-| **Tableau**| Dashboarding and Pareto visualization |
 | **Notion** | Project documentation and BRD creation |
 
 ---
