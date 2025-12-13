@@ -55,7 +55,7 @@ Key steps included:
 
 ## Scope Definition
 
-| In-Scope ✔ | Out-of-Scope ✘ |
+| In-Scope | Out-of-Scope |
 |-----------|----------------|
 | Invoice Cycle Time Analysis | Forecasting future volume |
 | Quantitative Bottleneck Identification | Vendor compliance cost analysis |
