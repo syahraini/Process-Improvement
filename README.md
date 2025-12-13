@@ -1,4 +1,4 @@
-# Accounts Payable (AP) Cycle Time Reduction Project
+# Accounts Payable (AP) Workflow Automation Project
 
 ## Process Analysis • Business Intelligence • Excel • BPMN • Miro
 
@@ -6,32 +6,17 @@
 
 ## Project Overview
 
-This project provides a comprehensive analysis of the organization's Invoice-to-Pay process using 3,000 transactional records. The goal was to identify and quantify the core bottlenecks causing a high average invoice cycle time — which was impacting vendor relationships and financial accruals.
+This project provides a comprehensive, data-driven analysis of the organization's critical Invoice-to-Pay process, utilizing 15,350 transactional records. The goal was to conclusively identify and quantify the systemic bottlenecks causing the catastrophic 13-day average invoice cycle time — a failure impacting vendor relationships, financial accruals, and overall organizational compliance (2.22% SLA).
 
-The analysis includes:
-
-- As-Is process mapping and bottleneck identification.  
-- Quantitative (Pareto) analysis of delay contribution by responsible actor.  
-- Root cause analysis leading to a To-Be automated workflow design (BPMN).  
-- Defined business requirements (BRD) for automated implementation.
-
-### Dashboards
-
-While a live dashboard is not shared, the project used visualization to track:
-- Invoice Cycle Time Overview  
-- Baseline vs. Projected Cycle Time (13 days → < 5 days)  
-- Pareto chart showing delay contribution by actor (78% from Approvers)  
-- Rework & Exception Metrics  
-- Manual touch rate reduction (Projected 65% → < 20%)  
-- Escalation Monitoring: Tracking late approval rates vs. escalation triggers  
-
-Final dashboard images and project documentation are available in the project documentation folder.
-
----
+The analysis and design deliverables include:
+- Rigorously validated As-Is process mapping and bottleneck quantification (13 days of passive waiting).
+- Quantitative (Pareto) and Qualitative (5 Whys, Fishbone) Root Cause Analysis.
+- Defined To-Be Automated Workflow Design (BPMN) to eliminate manual steps and enforce accountability.
+- Finalized Business Requirements Document (BRD v1.0) with MoSCoW prioritization and SMART success criteria.
 
 ## Data Sources
 
-**Dataset**: Full Invoice Transaction Logs (3,000 records)  
+**Dataset**: Full Invoice Transaction Logs (15,350 records)  
 **File**: `invoice_dataset_cleaned.csv`  
 **Description**: Timestamps for all invoice status changes — sourced from the organization’s internal ERP and financial databases.
 
@@ -40,36 +25,31 @@ Final dashboard images and project documentation are available in the project do
 ## Data Cleaning & Transformation
 
 Processing was performed using Excel to standardize all datasets into a clean analytical model focused on time duration.
-
 Key steps included:
-
-1. Timestamp standardization and validation across all process steps (e.g., Approval Requested vs. Approved Date).  
-2. Cycle Time Calculation for each actor and process stage.  
-3. Delay Contribution Calculation to perform Pareto Analysis.  
-4. Standardization of actor and process stage names.  
-
-**Data Validation**:
-- Removed incomplete records without full end-to-end timestamps.  
-- Validated the logical consistency of the process flow against the As-Is BPMN.  
-- Ensured invoice value and PO data integrity for smart routing analysis.  
+- Timestamp standardization and validation across all process steps (e.g., Approval Requested vs. Approved Date).
+- Cycle Time Calculation for each actor and process stage (identifying the 7.53-day bottleneck).
+- Delay Contribution Calculation to perform Pareto Analysis.
+- Data Validation: Removed incomplete records without full end-to-end timestamps.
 
 ---
 
 ## Analytical Framework
 
 ### KPI Definition
-- Average Invoice Cycle Time (Total Days)  
-- Process Step Cycle Time (Days per Actor)  
-- Delay Percentage Contribution (Pareto Analysis)  
+- Average Invoice Cycle Time (Total Days)
+- Process Step Cycle Time (Days per Actor)
+- Delay Percentage Contribution (Pareto Analysis)
+- Rework Rate & SLA Compliance (2.22%) 
 
 ### Data Processing
-- Calculated duration metrics using Ms. Excel.  
-- Segmented delay by Responsible Actor (Approver 1, Approver 2, AP Team).  
-- Correlated long cycle times with specific root causes (e.g., Manual Data Entry, Lack of Escalation).  
+- Calculated duration metrics using Ms. Excel.
+- Segmented delay by Responsible Actor (Approver 1, Approver 2, AP Team).
+- Correlated long cycle times with systemic root causes using 5 Whys and Fishbone Analysis.
+- Prioritized all solutions using MoSCoW and defined project success with SMART Criteria.
 
 ### Process Design (BPMN)
-- Visualized the inefficient As-Is process.  
-- Designed the streamlined To-Be Automated Workflow (eliminating manual steps and enforcing escalation).  
+- Visualized the inefficient As-Is process.
+- Designed the streamlined To-Be Automated Workflow (eliminating manual steps and enforcing automated escalation).  
 
 ---
 
@@ -86,31 +66,33 @@ Key steps included:
 
 ## Key Insights & Findings
 
-- **Approval Process Bottleneck**  
-  Finding: Approvers (Stage 1 and 2) account for **78% of the 13-day average cycle time**.  
-  Implication: Improvement efforts must target the wait time for human action — not system processing time.
+- **Approval Process Bottleneck (The Passive Wait)**  
+  Finding: Approvers (Stage 1 and 2) account for 78% of the 13-day average cycle time.
+  Implication: The core problem is passive waiting (not processing speed). The solution must implement a hard deadline and automated escalation.
 
-- **Manual Workflow Inefficiency**  
-  Finding: The existing fragmented, manual data entry and validation process leads to high rework rates.  
-  Implication: A centralized, automated intake and OCR validation system is required to shift the AP team’s focus to high-value exception handling.
-
-- **Solution — Auto-Approval Bypass**  
-  Finding: The rigid 2-level approval policy for all invoices (including low-value ones) is a major contributor to the delay.  
-  Implication: The To-Be system must implement Auto-Approval for invoices under **$1,000** with a successful 3-Way Match, eliminating the bottleneck without policy risk.
+- **Intake Quality Failure**  
+  Finding: Unstructured intake channels (Email, WA) are the source of 45.57% of all rework.
+  Implication: A centralized, mandatory intake portal with tollgate validation is required to eliminate low-value exception handling and reduce the 14.12% rework rate.
 
 - **Solution — Escalation Logic**  
-  Finding: Invoices frequently get stuck with an Approver due to a lack of reminders or defined deadlines.  
-  Implication: The To-Be system must implement a **48-hour Timer Event** to automatically trigger a reminder and subsequent escalation to the manager — enforcing accountability.
+  Finding: Invoices frequently get stuck with an Approver due to a lack of defined deadlines.  
+  Implication: The To-Be system must implement a 72-hour Timer Event to automatically trigger a reminder and subsequent escalation to the manager, enforcing accountability and eliminating the 13-day delay.
 
+- **Solution — Auto-Approval Bypass**  
+  Finding: The rigid 2-level approval policy for all invoices (including low-value ones) is a major contributor to the delay.
+  Implication: The To-Be system implements Auto-Approval for invoices under < $1,000 with a successful 3-Way Match, leveraging automation to achieve a Quick Win.
+  
 ---
 
 ## Deliverables
 
-- Business Requirements Document (BRD)  
-- As-Is & To-Be BPMN Diagram (visualizing the automated flow)  
 - Project Charter
-- Timestamped Invoice Log
-- Interview Notes
+- As-Is BPMN Diagram (Miro)
+- Data Analysis Report (cycle time, bottlenecks, SLA, Pareto)
+- Pain Points & Root Cause Summary
+- To-Be BPMN Diagram (Miro)
+- BRD (requirements + acceptance criteria)
+- Executive Summary
 
 ---
 
@@ -121,6 +103,7 @@ Key steps included:
 | **Excel**  | Data extraction, transformation, and duration calculation, and Pareto visualization |
 | **Miro**   | Process mapping (As-Is / To-Be BPMN) and Root Cause Analysis |
 | **Notion** | Project documentation and BRD creation |
+| **Canva** | Presentation |
 
 ---
 
